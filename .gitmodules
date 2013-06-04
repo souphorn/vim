@@ -16,3 +16,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/AutoTag"]
+	path = bundle/AutoTag
+	url = https://github.com/vim-scripts/AutoTag.git
