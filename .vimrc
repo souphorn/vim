@@ -1,12 +1,12 @@
 let mapleader=","
 syntax on
-colorscheme ron
-cd /cygdrive/d/Baycoot/dev_lamp/sitscape/apache2.2/htdocs/drupal
+"colorscheme ron
 execute pathogen#infect()
 nmap <leader>ff :FufFile<cr>
 nmap <leader>fb :FufBuffer<cr>
 nmap <leader>nt :NERDTreeToggle<cr>
 nmap <leader>ct :CommandT<cr>
+nmap <leader>tl :Tlist<cr>
 "Switch betwwen buffer without saving it
 set hidden
 
@@ -42,4 +42,4 @@ filetype plugin indent on
 autocmd filetype python set expandtab
 
 filetype plugin on
-
+set expandtab

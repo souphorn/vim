@@ -1,6 +1,6 @@
 have_header: checking for ruby.h... -------------------- yes
 
-"gcc -o conftest -I/usr/include/ruby-1.9.1/i386-cygwin -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I.    -ggdb -O2 -pipe   -fno-strict-aliasing conftest.c  -L. -L/usr/lib -L.      -lruby191  -lpthread -lrt -ldl -lcrypt  "
+"gcc -o conftest -I/usr/include/ruby-1.9.1/i686-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -8,7 +8,7 @@ checked program was:
 3: int main() {return 0;}
 /* end */
 
-"gcc -E -I/usr/include/ruby-1.9.1/i386-cygwin -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I.    -ggdb -O2 -pipe   -fno-strict-aliasing  conftest.c -o conftest.i"
+"gcc -E -I/usr/include/ruby-1.9.1/i686-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
