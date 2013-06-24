@@ -7,6 +7,12 @@ nmap <leader>fb :FufBuffer<cr>
 nmap <leader>nt :NERDTreeToggle<cr>
 nmap <leader>ct :CommandT<cr>
 nmap <leader>tl :Tlist<cr>
+nmap <leader>ppc :call PhpDoc()<cr>
+nmap <leader>tt :!phpunit --bootstrap=tests/bootstrap.php %<cr>
+nmap <leader>ta :!phpunit --bootstrap=tests/bootstrap.php tests<cr>
+nmap <leader>tw :w<cr>
+nmap <leader>tq :bd<cr>
+nmap <leader>w <C-w>
 "Switch betwwen buffer without saving it
 set hidden
 
