@@ -36,7 +36,7 @@ from collections import defaultdict
 # TagsFile name of tags file to look for
 # Disabled Disable autotag (enable by setting to any non-blank value)
 # StopAt stop looking for a tags file (and make one) at this directory (defaults to $HOME)
-vim_global_defaults = dict(maxTagsFileSize = 1024*1024*7,
+vim_global_defaults = dict(maxTagsFileSize = 1024*1024*20,
                            ExcludeSuffixes = "tml.xml.text.txt",
                            VerbosityLevel = logging.WARNING,
                            CtagsCmd = "ctags",
