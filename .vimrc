@@ -1,18 +1,21 @@
 let mapleader=","
 syntax on
-"colorscheme ron
+colorscheme evening
 execute pathogen#infect()
+nmap <F8> :TagbarToggle<CR>
 nmap <leader>ff :FufFile<cr>
 nmap <leader>fb :FufBuffer<cr>
 nmap <leader>nt :NERDTreeToggle<cr>
 nmap <leader>ct :CommandT<cr>
 nmap <leader>tl :Tlist<cr>
 nmap <leader>ppc :call PhpDoc()<cr>
-nmap <leader>tt :!phpunit --bootstrap=tests/bootstrap.php %<cr>
+"nmap <leader>tt :!phpunit --bootstrap=tests/bootstrap.php %<cr>
+nmap <leader>tt :call Souphorn()<cr>
 nmap <leader>ta :!phpunit --bootstrap=tests/bootstrap.php tests<cr>
 nmap <leader>tw :w<cr>
 nmap <leader>tq :bd<cr>
 nmap <leader>w <C-w>
+nmap <leader>ts :tselect<cr>
 "Switch betwwen buffer without saving it
 set hidden
 
@@ -44,8 +47,24 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
+set laststatus=2
+
 filetype plugin indent on
 autocmd filetype python set expandtab
 
 filetype plugin on
 set expandtab
+
+au BufRead *.php set ft=php.html
+au BufNewFile *.php set ft=php.html
+
+set tags=tags;/;ctags
+function! Souphorn()
+    let ex = file_readable("tests/bootstrap.php")
+    if ex == 0
+        :!phpunit %
+    else
+        :!phpunit --bootstrap=tests/bootstrap.php %
+    endif
+endfunction
+
