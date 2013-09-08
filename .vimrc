@@ -17,6 +17,9 @@ nmap <leader>tq :bd<cr>
 nmap <leader>w <C-w>
 nmap <leader>ts :tselect<cr>
 "Switch betwwen buffer without saving it
+"
+"Snippet 
+let snips_author="An Souphorn <ansouphorn@gmail.com>"
 set hidden
 
 set nowrap        " don't wrap lines
