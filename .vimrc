@@ -66,9 +66,15 @@ au BufNewFile *.php set ft=php.html
 set tags=tags;/;ctags
 function! Souphorn()
     let ex = file_readable("tests/bootstrap.php")
+    let phpunitxmlExist = file_readable("tests/phpunit.xml")
+    let phpunit = "--configuration=tests/phpunit.xml"
+    if phpunitxmlExist == 0
+        llet phpunit = ""
+    endif
     if ex == 0
-        :!phpunit --configuration=tests/phpunit.xml %
+        :!phpunit phpunit %
     else
-        :!phpunit --bootstrap=tests/bootstrap.php --configuration=tests/phpunit.xml %
+        :!phpunit --bootstrap=tests/bootstrap.php phpunit %
     endif
 endfunction
+let b:did_phpgetset_ftplugin = 1
