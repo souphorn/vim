@@ -12,7 +12,7 @@ nmap <leader>/pd :call PhpDoc()<cr>
 "nmap <leader>tt :!phpunit --bootstrap=tests/bootstrap.php %<cr>
 nmap <leader>tt :call Souphorn()<cr>
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nmap <leader>ta :!phpunit --bootstrap=tests/bootstrap.php --configuration=tests/phpunit.xml tests<cr>
+nmap <leader>ta :!./vendor/bin/phpunit --bootstrap=./tests/bootstrap.php --configuration=./tests/phpunit.xml tests<cr>
 nmap <leader>tw :w<cr>
 nmap <leader>tq :bd<cr>
 nmap <leader>w <C-w>
@@ -32,7 +32,7 @@ set backspace=indent,eol,start
 " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
+"set number        " always show line numbers
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -72,9 +72,9 @@ function! Souphorn()
         llet phpunit = ""
     endif
     if ex == 0
-        :!phpunit phpunit %
+        :!./vendor/bin/phpunit phpunit %
     else
-        :!phpunit --bootstrap=tests/bootstrap.php phpunit %
+        :!./vendor/bin/phpunit --bootstrap=./tests/bootstrap.php phpunit %
     endif
 endfunction
 let b:did_phpgetset_ftplugin = 1
@@ -83,3 +83,20 @@ let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'    "enable all function in all mode."
 let g:user_emmet_expandabbr_key='<c-e>'
+
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
+scriptencoding utf-8
+set encoding=utf-8
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+:nnoremap <leader>g :lgrep -r --include="*.php" 
