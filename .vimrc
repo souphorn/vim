@@ -12,7 +12,7 @@ nmap <leader>/pd :call PhpDoc()<cr>
 "nmap <leader>tt :!phpunit --bootstrap=tests/bootstrap.php %<cr>
 nmap <leader>tt :call Souphorn()<cr>
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nmap <leader>ta :!./vendor/bin/phpunit --bootstrap=./tests/bootstrap.php --configuration=./tests/phpunit.xml tests/**/*Test.php<cr>
+nmap <leader>ta :!./vendor/bin/phpunit --bootstrap=./tests/bootstrap.php --configuration=./tests/phpunit.xml tests<cr>
 nmap <leader>tw :w<cr>
 nmap <leader>tq :bd<cr>
 nmap <leader>w <C-w>
