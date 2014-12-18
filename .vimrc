@@ -1,6 +1,6 @@
 let mapleader=","
 syntax on
-"colorscheme evening
+colorscheme evening
 execute pathogen#infect()
 nmap <F8> :TagbarToggle<CR>
 nmap <leader>ff :FufFile<cr>
@@ -100,3 +100,5 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 :nnoremap <leader>g :lgrep -r --include="*.php" 
+set guifont=ProggyCleanTT\ 12
+
