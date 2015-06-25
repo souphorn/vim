@@ -15,8 +15,10 @@ inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nmap <leader>ta :!./vendor/bin/phpunit --bootstrap=./tests/bootstrap.php --configuration=./tests/phpunit.xml tests<cr>
 nmap <leader>tw :w<cr>
 nmap <leader>tq :bd<cr>
+nmap <leader>tb :% !xmllint --format -<cr>
 nmap <leader>w <C-w>
 nmap <leader>ts :tselect<cr>
+nmap <leader>ft :set filetype=
 
 nmap <leader>/gs :InsertBothGetterSetter<cr>
 
@@ -102,3 +104,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 :nnoremap <leader>g :lgrep -r --include="*.php" 
 set guifont=ProggyCleanTT\ 12
 
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"                                            
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 

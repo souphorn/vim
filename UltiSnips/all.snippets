@@ -1,0 +1,9 @@
+snippet phing "Default phing" b
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="${1}" default="unittest">
+	<target name="unittest">
+		<exec command="phpunit" dir="" />
+	</target>
+</project>
+endsnippet

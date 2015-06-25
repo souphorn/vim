@@ -1,0 +1,47 @@
+snippet php "Open php tag" b
+<?php $0
+endsnippet
+
+snippet phpc "Open php tag with class" b
+<?php
+/**
+ * Class souphorn
+ * @author An Souphorn <ansouphorn@gmail.com>
+ */
+class souphorn
+{
+    public function __construct($options)
+    {
+        // code
+    }
+}
+endsnippet
+
+snippet e "PHP echo string" b
+<?php echo $1 ?>
+endsnippet
+
+snippet pr "Print_r" b
+print_r($1);
+endsnippet
+
+snippet fun "Create function" b
+public function $1($2) 
+{
+	$0
+}
+endsnippet
+
+snippet ta "Test assert" b
+$this->assert$0;
+endsnippet
+
+snippet $s "Description" i
+$_SESSION["$0"]
+endsnippet
+
+snippet lroute "Laravel route" b
+Route::get('$1', ['as'=>'$2', function(){
+	return $0;
+}]);
+endsnippet

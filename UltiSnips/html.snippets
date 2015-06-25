@@ -9,10 +9,10 @@ snippet a "" b
 $0
 </a>
 endsnippet
-snippet "t (\w+)" "Description" r
-`!p snip.rv = "<"+match.group(1)+""` class='$1'>
+snippet "(\s|^)t (\w+)" "Description" r
+`!p snip.rv = "<"+match.group(2)+""` class='$1'>
 	$2
-`!p snip.rv = "</"+match.group(1)+">"`
+`!p snip.rv = "</"+match.group(2)+">"`
 endsnippet
 snippet "t (\w+) c (.+)" "Description" r
 `!p snip.rv = "<"+match.group(1)+" class='"+match.group(2)+"'"`$1>
