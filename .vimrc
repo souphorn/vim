@@ -1,6 +1,6 @@
 let mapleader=","
 syntax on
-colorscheme evening
+colorscheme delek
 execute pathogen#infect()
 nmap <F8> :TagbarToggle<CR>
 nmap <leader>ff :FufFile<cr>
@@ -109,4 +109,4 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
 
-set wildignore=vendor/**
+set wildignore=vendor/**,node_modules/**
