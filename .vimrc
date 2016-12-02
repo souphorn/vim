@@ -1,6 +1,6 @@
 let mapleader=","
 syntax on
-colorscheme delek
+colorscheme peachpuff
 execute pathogen#infect()
 nmap <F8> :TagbarToggle<CR>
 nmap <leader>ff :FufFile<cr>
@@ -110,3 +110,17 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
 
 set wildignore=vendor/**,node_modules/**
+let g:airline#extensions#tabline#enabled = 1
+
+au BufRead,BufNewFile *.ts   setfiletype typescript
+set relativenumber
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+"
+" " Use 256 colours (Use this setting only if your terminal supports 256
+" colours)
+set t_Co=256)
+
+nnoremap \ :Ag<SPACE>
