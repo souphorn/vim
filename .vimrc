@@ -124,3 +124,6 @@ set laststatus=2
 set t_Co=256)
 
 nnoremap \ :Ag<SPACE>
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
